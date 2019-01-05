@@ -158,6 +158,9 @@ var Main = (function (_super) {
         var tx = new egret.TextField();
         tx.text = "I'm Jack, I will use Egret create a fantasy mobile game!";
         tx.size = 32;
+        tx.x = 20;
+        tx.y = 20;
+        tx.width = this.stage.stageWidth - 40;
         this.addChild(tx);
     };
     return Main;
