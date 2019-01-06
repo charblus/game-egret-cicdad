@@ -168,17 +168,44 @@ var Main = (function (_super) {
         }, this);
         var batman = new egret.Bitmap(RES.getRes('hexo-huaheshang_png'));
         batman.x = 0;
-        batman.y = 20;
+        batman.y = 60;
         this.addChild(batman);
         var batman1 = new egret.Bitmap(RES.getRes('hexo-huaheshang_png'));
-        batman1.x = 60;
+        batman1.x = 100;
         batman1.y = 60;
         this.addChild(batman1);
-        var batman2 = new egret.Bitmap(RES.getRes('hexo-huaheshang_png'));
-        batman2.x = 120;
-        batman2.y = 80;
-        this.addChild(batman2);
-        this.setChildIndex(batman1, this.getChildIndex(batman2));
+        this.stage.addEventListener(egret.TouchEvent.TOUCH_TAP, function () {
+            egret.Tween.get(batman).to({ x: batman1.x }, 300, egret.Ease.circIn);
+            egret.Tween.get(batman1).to({ x: batman.x }, 300, egret.Ease.circIn);
+            egret.Tween.get(batman1).to({ scaleX: .4, scaleY: .4, alpha: .3 }, 300, egret.Ease.circIn).to({ scaleX: 1, scaleY: 1, alpha: 1 }, 300, egret.Ease.circIn);
+            var sound = RES.getRes('jimp_mp3');
+            sound.play();
+        }, this);
+        var urlreq = new egret.URLRequest('http://httpbin.org/user-agent');
+        var urlloader = new egret.URLLoader;
+        urlloader.addEventListener(egret.Event.COMPLETE, function (evt) {
+            console.log(evt.target.data);
+        }, this);
+        urlloader.load(urlreq);
+        this.webSocket = new egret.WebSocket();
+        this.webSocket.addEventListener(egret.ProgressEvent.SOCKET_DATA, this.onReceiveMessage, this);
+        this.webSocket.addEventListener(egret.Event.CONNECT, this.onSocketOpen, this);
+        this.webSocket.connect('echo.websocket.org', 80);
+    };
+    // private createGameScene():void {
+    //     this.webSocket = new egret.WebSocket();
+    //     this.webSocket.addEventListener(egret.ProgressEvent.SOCKET_DATA, this.onReceiveMessage, this);
+    //     this.webSocket.addEventListener(egret.Event.CONNECT, this.onSocketOpen, this);
+    //     this.webSocket.connect('echo.websocket.org', 80)
+    // }
+    Main.prototype.onSocketOpen = function () {
+        var cmd = 'hello Egret webSocket';
+        console.log('The connection id successful, send data:' + cmd);
+        this.webSocket.writeUTF(cmd);
+    };
+    Main.prototype.onReceiveMessage = function (e) {
+        var msg = this.webSocket.readUTF();
+        console.log("Receive data: " + msg);
     };
     return Main;
 }(egret.DisplayObjectContainer));

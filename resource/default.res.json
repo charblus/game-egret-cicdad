@@ -1,7 +1,7 @@
 {
 	"groups": [
 		{
-			"keys": "bg_jpg,egret_icon_png,description_json,hexo-02_jpg,hexo-01_jpg,hexo-huaheshang_jpg,hexo-03_png,hexo-huaheshang_png",
+			"keys": "bg_jpg,egret_icon_png,description_json,hexo-02_jpg,hexo-01_jpg,hexo-huaheshang_jpg,hexo-03_png,hexo-huaheshang_png,jimp_mp3",
 			"name": "preload"
 		}
 	],
@@ -45,6 +45,11 @@
 			"name": "hexo-huaheshang_png",
 			"type": "image",
 			"url": "assets/hexo-huaheshang.png"
+		},
+		{
+			"name": "jimp_mp3",
+			"type": "sound",
+			"url": "assets/jimp.mp3"
 		}
 	]
 }
