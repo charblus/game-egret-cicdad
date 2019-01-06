@@ -166,6 +166,18 @@ var Main = (function (_super) {
         tx.addEventListener(egret.TouchEvent.TOUCH_TAP, function (evt) {
             tx.textColor = 0x00ff00;
         }, this);
+        var batman = new egret.Bitmap(RES.getRes('hexo-huaheshang_png'));
+        batman.x = 0;
+        batman.y = 20;
+        this.addChild(batman);
+        var batman1 = new egret.Bitmap(RES.getRes('hexo-huaheshang_png'));
+        batman1.x = 60;
+        batman1.y = 60;
+        this.addChild(batman1);
+        var batman2 = new egret.Bitmap(RES.getRes('hexo-huaheshang_png'));
+        batman2.x = 120;
+        batman2.y = 80;
+        this.addChild(batman2);
     };
     return Main;
 }(egret.DisplayObjectContainer));

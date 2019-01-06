@@ -1,23 +1,50 @@
 {
-	"groups":[
-	{
-		"keys":"bg_jpg,egret_icon_png,description_json",
-		"name":"preload"
-	}],
-	"resources":[
-	{
-		"name":"bg_jpg",
-		"type":"image",
-		"url":"assets/bg.jpg"
-	},
-	{
-		"name":"egret_icon_png",
-		"type":"image",
-		"url":"assets/egret_icon.png"
-	},
-	{
-		"name":"description_json",
-		"type":"json",
-		"url":"config/description.json"
-	}]
+	"groups": [
+		{
+			"keys": "bg_jpg,egret_icon_png,description_json,hexo-02_jpg,hexo-01_jpg,hexo-huaheshang_jpg,hexo-03_png,hexo-huaheshang_png",
+			"name": "preload"
+		}
+	],
+	"resources": [
+		{
+			"name": "bg_jpg",
+			"type": "image",
+			"url": "assets/bg.jpg"
+		},
+		{
+			"name": "egret_icon_png",
+			"type": "image",
+			"url": "assets/egret_icon.png"
+		},
+		{
+			"name": "description_json",
+			"type": "json",
+			"url": "config/description.json"
+		},
+		{
+			"name": "hexo-02_jpg",
+			"type": "image",
+			"url": "assets/hexo-02.jpg"
+		},
+		{
+			"name": "hexo-01_jpg",
+			"type": "image",
+			"url": "assets/hexo-01.jpg"
+		},
+		{
+			"name": "hexo-huaheshang_jpg",
+			"type": "image",
+			"url": "assets/hexo-huaheshang.jpg"
+		},
+		{
+			"name": "hexo-03_png",
+			"type": "image",
+			"url": "assets/hexo-03.png"
+		},
+		{
+			"name": "hexo-huaheshang_png",
+			"type": "image",
+			"url": "assets/hexo-huaheshang.png"
+		}
+	]
 }

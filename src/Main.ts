@@ -108,14 +108,25 @@ class Main extends egret.DisplayObjectContainer {
         this.addChild( tx );
 
         tx.touchEnabled = true;
-        tx.addEventListener( egret.TouchEvent.TOUCH_TAP, function( evt:egret.TouchEvent ): void{
+        tx.addEventListener( egret.TouchEvent.TOUCH_TAP, ( evt:egret.TouchEvent ): void => {
            tx.textColor = 0x00ff00;
         }, this );
+
+        var batman:egret.Bitmap = new egret.Bitmap( RES.getRes('hexo-huaheshang_png'));
+        batman.x = 0;
+        batman.y = 20;
+        this.addChild( batman );
+
+        var batman1:egret.Bitmap = new egret.Bitmap( RES.getRes('hexo-huaheshang_png'));
+        batman1.x = 60;
+        batman1.y = 60;
+        this.addChild( batman1 );
+
+        var batman2:egret.Bitmap = new egret.Bitmap( RES.getRes('hexo-huaheshang_png'));
+        batman2.x = 120;
+        batman2.y = 80;
+        this.addChild( batman2 );
     }
 
-    // private touchHandler( evt:egret.TouchEvent): void {
-    //     var tx:egret.TextField = evt.currentTarget;
-    //     tx.textColor = 0x00ff00;
-    // }
 
 }
