@@ -162,7 +162,14 @@ var Main = (function (_super) {
         tx.y = 20;
         tx.width = this.stage.stageWidth - 40;
         this.addChild(tx);
+        tx.touchEnabled = true;
+        tx.addEventListener(egret.TouchEvent.TOUCH_TAP, this.touchHandler, this);
+    };
+    Main.prototype.touchHandler = function (evt) {
+        var tx = evt.currentTarget;
+        tx.textColor = 0x00ff00;
     };
     return Main;
 }(egret.DisplayObjectContainer));
 __reflect(Main.prototype, "Main");
+//# sourceMappingURL=Main.js.map

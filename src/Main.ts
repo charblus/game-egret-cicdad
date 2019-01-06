@@ -106,6 +106,14 @@ class Main extends egret.DisplayObjectContainer {
         tx.y = 20;
         tx.width = this.stage.stageWidth - 40;
         this.addChild( tx );
+
+        tx.touchEnabled = true;
+        tx.addEventListener( egret.TouchEvent.TOUCH_TAP, this.touchHandler, this );
+    }
+
+    private touchHandler( evt:egret.TouchEvent): void {
+        var tx:egret.TextField = evt.currentTarget;
+        tx.textColor = 0x00ff00;
     }
 
 }
