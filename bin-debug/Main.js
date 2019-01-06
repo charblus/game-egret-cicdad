@@ -178,8 +178,8 @@ var Main = (function (_super) {
         batman2.x = 120;
         batman2.y = 80;
         this.addChild(batman2);
+        this.setChildIndex(batman1, this.getChildIndex(batman2));
     };
     return Main;
 }(egret.DisplayObjectContainer));
 __reflect(Main.prototype, "Main");
-//# sourceMappingURL=Main.js.map

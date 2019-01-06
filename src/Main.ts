@@ -122,10 +122,14 @@ class Main extends egret.DisplayObjectContainer {
         batman1.y = 60;
         this.addChild( batman1 );
 
+
         var batman2:egret.Bitmap = new egret.Bitmap( RES.getRes('hexo-huaheshang_png'));
         batman2.x = 120;
         batman2.y = 80;
         this.addChild( batman2 );
+
+        this.setChildIndex(batman1, this.getChildIndex( batman2 ));
+
     }
 
 
